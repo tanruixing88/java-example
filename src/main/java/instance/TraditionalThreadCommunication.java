@@ -9,12 +9,13 @@ public class TraditionalThreadCommunication {
 
     public synchronized void exec(int i, String fmt) {
         this.notify();
-        System.out.println(fmt + " thread exec seq:" + i);
+        System.out.println(fmt + " thread exec seq:" + i + " start");
         try {
             this.wait();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println(fmt + " thread exec seq:" + i + " end");
     }
 
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class TraditionalThreadCommunication {
             }
         }).start();
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 0; i <= 5; i++) {
             traditionalThreadCommunication.exec(i, "main");
         }
     }
