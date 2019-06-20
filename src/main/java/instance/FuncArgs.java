@@ -1,7 +1,7 @@
 package instance;
 
 /**
- * Created by w540 on 2019/6/18.
+ * Created by tanruixing on 2019/6/18.
  */
 public class FuncArgs {
     private int i = 2;

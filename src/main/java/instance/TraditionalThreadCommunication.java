@@ -5,8 +5,6 @@ package instance;
  * Created on 2019-05-20
  */
 public class TraditionalThreadCommunication {
-    private boolean syncFlag = true;
-
     public synchronized void exec(int i, String fmt) {
         this.notify();
         System.out.println(fmt + " thread exec seq:" + i + " start");
